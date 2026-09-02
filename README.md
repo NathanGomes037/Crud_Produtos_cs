@@ -1,10 +1,10 @@
-# 🛒 CRUD de Produtos — C#
+# CRUD de Produtos — C#
 
 [![C#](https://img.shields.io/badge/C%23-8A2BE2?style=for-the-badge\&logo=csharp\&logoColor=white)](https://dotnet.microsoft.com/)
 [![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge\&logo=dotnet\&logoColor=white)](https://dotnet.microsoft.com/)
 [![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge\&logo=git\&logoColor=white)](https://git-scm.com/)
 
-## 📋 Sobre o projeto
+## Sobre o projeto
 
 Aplicação de **gerenciamento de produtos desenvolvida em C#**, executada via terminal, criada com o objetivo de praticar fundamentos da linguagem e consolidar conhecimentos de lógica de programação.
 
@@ -14,9 +14,9 @@ A aplicação implementa operações de **CRUD (Create, Read, Update e Delete)**
 
 ---
 
-## ⚙️ Funcionalidades
+## Funcionalidades
 
-### 📦 Gerenciamento de produtos
+### Gerenciamento de produtos
 
 * **Cadastrar** produtos
 * **Listar** produtos cadastrados
@@ -24,18 +24,18 @@ A aplicação implementa operações de **CRUD (Create, Read, Update e Delete)**
 * **Atualizar** informações dos produtos
 * **Excluir** produtos
 
-### 💰 Operações com preços
+### Operações com preços
 
 * Consulta de preço por nome
 * Simulação de desconto baseada em uma porcentagem informada pelo usuário
 
-### ✏️ Atualização de produtos
+### Atualização de produtos
 
 O sistema possui um menu específico para atualização, permitindo selecionar qual característica do produto será modificada.
 
 ---
 
-## 🧠 Conceitos aplicados
+## Conceitos aplicados
 
 Durante o desenvolvimento foram praticados:
 
@@ -54,7 +54,7 @@ Durante o desenvolvimento foram praticados:
 
 ---
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 | Tecnologia             | Utilização                    |
 | ---------------------- | ----------------------------- |
@@ -66,7 +66,7 @@ Durante o desenvolvimento foram praticados:
 
 ---
 
-## 🔎 Validação de entrada
+## Validação de entrada
 
 Um dos principais pontos de aprendizado do projeto foi a utilização do `TryParse` para tratar entradas fornecidas pelo usuário.
 
@@ -89,7 +89,7 @@ Essa abordagem ajuda a evitar erros causados por entradas inválidas e torna a i
 
 ---
 
-## 📚 Aprendizados
+## Aprendizados
 
 O desenvolvimento deste projeto contribuiu para meu aprofundamento em **C# e lógica de programação**.
 
@@ -103,7 +103,7 @@ Esse processo ajudou a desenvolver não apenas conhecimentos de C#, mas também 
 
 ---
 
-## 🚀 Próximas melhorias
+## Próximas melhorias
 
 Este projeto será utilizado como base para aplicar conceitos mais avançados conforme minha evolução nos estudos.
 
@@ -118,7 +118,7 @@ Este projeto será utilizado como base para aplicar conceitos mais avançados co
 
 ---
 
-## ▶️ Como executar
+## Como executar
 
 ### Pré-requisitos
 
@@ -144,7 +144,7 @@ dotnet run
 
 ---
 
-## 📁 Estrutura do projeto
+## Estrutura do projeto
 
 ```text
 Crud_Produtos_cs/
@@ -157,7 +157,7 @@ Crud_Produtos_cs/
 
 ---
 
-## 🎯 Objetivo
+## Objetivo
 
 Este projeto faz parte da minha jornada de aprendizado em desenvolvimento de software.
 
@@ -165,7 +165,7 @@ O objetivo principal é consolidar fundamentos de **C# e lógica de programaçã
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 **Nathan Gomes**
 

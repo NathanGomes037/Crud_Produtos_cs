@@ -109,7 +109,7 @@ Este projeto será utilizado como base para aplicar conceitos mais avançados co
 
 * ☑️ Aplicar Programação Orientada a Objetos (POO)
 * ☑️ Substituir arrays por `List<T>`
-* [ ] Melhorar a separação de responsabilidades
+* ☑️ Melhorar a separação de responsabilidades
 * [ ] Implementar persistência de dados
 * [ ] Utilizar banco de dados
 * [ ] Implementar operações assíncronas

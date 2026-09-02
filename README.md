@@ -107,8 +107,8 @@ Esse processo ajudou a desenvolver não apenas conhecimentos de C#, mas também 
 
 Este projeto será utilizado como base para aplicar conceitos mais avançados conforme minha evolução nos estudos.
 
-* [ ] Aplicar Programação Orientada a Objetos (POO)
-* [ ] Substituir arrays por `List<T>`
+* ☑️ Aplicar Programação Orientada a Objetos (POO)
+* ☑️ Substituir arrays por `List<T>`
 * [ ] Melhorar a separação de responsabilidades
 * [ ] Implementar persistência de dados
 * [ ] Utilizar banco de dados

@@ -1,33 +1,91 @@
-O que é o Projeto? : 
+# CRUD de Produtos em C#
 
-o projeto é um CRUD simples de produtos usando a linguagem C# para fixação de usos de arrays, estruturas de controles, funções e sintaxe da linguagem C#, o CRUD projetado tem 6 funções que seria cadastrar, listar os produtos cadastrados, buscar o preço pelo nome do produto, fazer uma simulação de desconto do produto desejado com base na porcentagem que o usuario escolher, deletar um produto, e atualizar um produto de formas diferentes usando um menu proprio para a atualização caso o usuario queira atualizar somente uma caracteristica do produto
+Aplicação de gerenciamento de produtos desenvolvida em **C#** com o objetivo de praticar fundamentos de programação, estruturas de controle, funções, arrays e validação de entrada de dados.
 
-Tecnologias Ultilizadas: 
+Este projeto representa uma evolução de um CRUD desenvolvido anteriormente em **C++**, permitindo aplicar os mesmos conceitos em C# e aprofundar o conhecimento na linguagem.
 
--C#
+---
 
--VsCode
+## Sobre o projeto
 
--Arrays
+O sistema consiste em uma aplicação executada via terminal para gerenciamento de produtos.
 
--Estruturas de Controle
+A aplicação permite realizar as principais operações de um CRUD:
 
--Funções
+- **Create** — cadastrar produtos
+- **Read** — listar e consultar produtos
+- **Update** — atualizar informações
+- **Delete** — remover produtos
 
-o que aprendi com esse projeto:
+Além das operações básicas, o sistema possui funcionalidades adicionais para consulta de preços e simulação de descontos.
 
-foi um projeto muito realizador e que me fez pensar bastante pela sintaxe do C#, cohecer as formas para que as respostas dos usuarios não fossem nulas com tryParse, usando condição e funçao a reutilizaçao de codigo, esse projeto me ajudou a exergar usos diferentes para cada ferramentas que eu não tinha pensado antes e me aprofundar e entender mais do porque essas ferramentas foram criadas.
+---
 
-quais foram minhas dificuldades?
+## Funcionalidades
 
-sinceramente eu tive dificuldade com a sintaxe para me acostumar com ela sendo um pouco diferente do c++, mas o que mais me deu dificuldade foi a ultilização do tryParse, eu tentei ultilizar TryParse diversas vezes mas sempre dava erro até entender que TryParse retonava um valor booleano e aramzenava o valor caso estivesse dentro da condição, assim usando ele para vericar ultilizando condiçoes, outro problema que surgiu era ter que escrever varis vezes essa condição, o codigo iria fica gigante e meio massante, entaõ pensando em um jeito de deixar o codigo maiis leve veio a ideia de colocar função para o reaproveitamento do codigo assim deixando o codigo mais limpo
+### Gerenciamento de produtos
 
-melhorias para o futuro
+- Cadastrar novos produtos
+- Listar produtos cadastrados
+- Buscar o preço de um produto pelo nome
+- Atualizar informações de um produto
+- Excluir produtos cadastrados
 
--melhorar ele para poo(Programaçao Orientada a Objeto)
+### Operações com preços
 
--trocar arrays por list
+- Consultar preço de um produto
+- Simular descontos utilizando uma porcentagem informada pelo usuário
 
--colocar os cadastros em um arquivo txt
+### Atualização
 
--trocar arquivo txt por banco de dados 
+A atualização dos produtos possui um menu específico, permitindo que o usuário escolha qual característica deseja modificar sem precisar alterar todas as informações do produto.
+
+---
+
+## Tecnologias
+
+| Tecnologia | Utilização |
+|------------|------------|
+| C# | Desenvolvimento da aplicação |
+| .NET | Execução e gerenciamento do projeto |
+| Visual Studio Code | Ambiente de desenvolvimento |
+| Git | Controle de versão |
+| GitHub | Hospedagem do código |
+
+---
+
+## Conceitos praticados
+
+Durante o desenvolvimento foram aplicados conceitos fundamentais de programação:
+
+- Variáveis e tipos de dados
+- Operadores
+- Estruturas condicionais
+- Estruturas de repetição
+- Funções e reutilização de código
+- Arrays
+- Manipulação de strings
+- Validação de entrada de dados
+- Conversão de tipos
+- `TryParse`
+- Organização e fluxo de execução de um programa
+
+---
+
+## Validação de dados
+
+Um dos pontos trabalhados durante o desenvolvimento foi a validação das entradas fornecidas pelo usuário.
+
+Para evitar erros durante a conversão de valores, foi utilizado o método `TryParse`.
+
+Exemplo:
+
+```csharp
+if (int.TryParse(Console.ReadLine(), out int opcao))
+{
+    // Processamento da opção
+}
+else
+{
+    Console.WriteLine("Valor inválido.");
+}

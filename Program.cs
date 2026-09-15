@@ -21,26 +21,35 @@ class Program
             switch (opcao)
             {
                 case 1:
-                    int id = verificação.Ler_Int("Digite o ID do produto: ");
-                    string nome = verificação.Ler_Str("Digite o nome do produto: ");
-                    decimal preco = verificação.Ler_Dec("Digite o preço do produto: ");
-                    int quantidade = verificação.Ler_Int("Digite a quantidade do produto: ");
-                    service.Cadastro(id, nome, preco, quantidade);
+                    int quantidade_cadastro = verificação.Ler_Int("Digite a quantidade de produtos que deseja cadastrar: ");
+                    for(int i = 0; i< quantidade_cadastro; i++)
+                    {
+                        int id = verificação.Ler_Int("Digite o ID do produto: ");
+                        string nome = verificação.Ler_Str("Digite o nome do produto: ");
+                        decimal preco = verificação.Ler_Dec("Digite o preço do produto: ");
+                        int quantidade = verificação.Ler_Int("Digite a quantidade do produto: ");
+                        service.Cadastro(id, nome, preco, quantidade);
+                    }
                     break;
+                    
                 case 2:
                     service.Listar();
                     break;
                 case 3:
-                    service.BuscaPreco();
+                    string Busca_Preço = verificação.Ler_Str("Digite o nome do produto que deseja buscar o preço: ");
+                    service.BuscaPreco(Busca_Preço);
                     break;
                 case 4:
-                    service.SimulacaoDes();
+                    string Busca_simu = verificação.Ler_Str("Digite o nome do produto que deseja buscar o preço: ");
+                    service.SimulacaoDes(Busca_simu);
                     break;
                 case 5:
-                    service.Deletar();
+                    string Busca_Deletar = verificação.Ler_Str("Digite o nome do produto que deseja deletar: ");
+                    service.Deletar(Busca_Deletar);
                     break;
                 case 6:
-                    service.Alterar();
+                    string Busca_alterar = verificação.Ler_Str("Digite o nome do produto que deseja alterar: ");
+                    service.Alterar(Busca_alterar);
                     break;  
                 case 0:
                     Console.WriteLine("fechando o Programa");

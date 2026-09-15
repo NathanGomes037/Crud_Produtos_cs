@@ -5,18 +5,15 @@ class Produto_service{
     private Verificação_nulo verificação = new Verificação_nulo();
 
     public void Cadastro(int id, string nome, decimal preco, int quantidade){
-        int quantidade_cadastro = verificação.Ler_Int("Digite a quantidade de produtos que deseja cadastrar: ");
-        for(int i = 0; i < quantidade; i++)
-        {
+       
            Produto produto = new Produto();
                 produto.id = id;
                 produto.nome = nome;
                 produto.preco = preco;
                 produto.quantidade = quantidade; 
             
-            produtos.Add(produto);
-              
-        }
+            produtos.Add(produto);       
+        
     }
     public void Listar()
     {
@@ -26,12 +23,10 @@ class Produto_service{
             Console.WriteLine($"Nome: {produtos[i].nome}");
             Console.WriteLine($"Preço: {produtos[i].preco}");
             Console.WriteLine($"Quantidade: {produtos[i].quantidade}");
-            Console.WriteLine();
         }
     }
-    public void BuscaPreco()
+    public void BuscaPreco(string Busca)
     {
-        string Busca = verificação.Ler_Str("Digite o nome do produto que deseja buscar o preço: ");
         bool encontrado = false;
         for(int i = 0; i< produtos.Count; i++)
         {
@@ -47,9 +42,8 @@ class Produto_service{
             Console.WriteLine("Produto não encontrado");
         }
     }
-    public void SimulacaoDes()
+    public void SimulacaoDes(string Busca)
     {
-        string Busca = verificação.Ler_Str("Digite o nome do produto que deseja buscar o preço: ");
         bool encontrado = false;
         for(int i = 0; i< produtos.Count; i++)
         {
@@ -68,9 +62,8 @@ class Produto_service{
             Console.WriteLine("Produto não encontrado");
     }
     }
-    public void Deletar()
+    public void Deletar(string Busca)
     {
-        string Busca = verificação.Ler_Str("Digite o nome do produto que deseja deletar: ");
         bool encontrado = false;
         for(int i = 0; i< produtos.Count; i++)
         {
@@ -88,9 +81,8 @@ class Produto_service{
             Console.WriteLine("Produto não encontrado");
         }
     }
-    public void Alterar()
+    public void Alterar(string Busca)
     {
-        string Busca = verificação.Ler_Str("Digite o nome do produto que deseja alterar: ");
         bool encontrado = false;
         for(int i = 0; i< produtos.Count; i++)
         {

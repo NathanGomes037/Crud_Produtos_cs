@@ -21,7 +21,11 @@ class Program
             switch (opcao)
             {
                 case 1:
-                    service.Cadastro();
+                    int id = verificação.Ler_Int("Digite o ID do produto: ");
+                    string nome = verificação.Ler_Str("Digite o nome do produto: ");
+                    decimal preco = verificação.Ler_Dec("Digite o preço do produto: ");
+                    int quantidade = verificação.Ler_Int("Digite a quantidade do produto: ");
+                    service.Cadastro(id, nome, preco, quantidade);
                     break;
                 case 2:
                     service.Listar();

@@ -4,15 +4,18 @@ class Produto_service{
     private List<Produto> produtos = new ();
     private Verificação_nulo verificação = new Verificação_nulo();
 
-    public void Cadastro(){
-        int quantidade = verificação.Ler_Int("Digite a quantidade de produtos que deseja cadastrar: ");
+    public void Cadastro(int id, string nome, decimal preco, int quantidade){
+        int quantidade_cadastro = verificação.Ler_Int("Digite a quantidade de produtos que deseja cadastrar: ");
         for(int i = 0; i < quantidade; i++)
         {
-            produtos.Add(new Produto{
-                id = verificação.Ler_Int("Digite o ID do produto: "),
-                nome = verificação.Ler_Str("Digite o nome do produto: "),
-                preco = verificação.Ler_Dec("Digite o preço do produto: "),
-                quantidade = verificação.Ler_Int("Digite a quantidade do produto: ")            });
+           Produto produto = new Produto();
+                produto.id = id;
+                produto.nome = nome;
+                produto.preco = preco;
+                produto.quantidade = quantidade; 
+            
+            produtos.Add(produto);
+              
         }
     }
     public void Listar()
@@ -76,6 +79,7 @@ class Produto_service{
                 produtos.RemoveAt(i);
                 Console.WriteLine("Produto deletado com sucesso");
                 encontrado = true;
+                break;
             }
            
         }
@@ -113,6 +117,7 @@ class Produto_service{
                         Console.WriteLine("Opção inválida");
                         break;
                 }
+                break;
             }
         }
     

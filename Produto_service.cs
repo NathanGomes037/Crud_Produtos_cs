@@ -9,16 +9,17 @@ class Produto_service{
         for(int i = 0; i < quantidade; i++)
         {
             produtos.Add(new Produto{
+                id = verificação.Ler_Int("Digite o ID do produto: "),
                 nome = verificação.Ler_Str("Digite o nome do produto: "),
                 preco = verificação.Ler_Dec("Digite o preço do produto: "),
-                quantidade = verificação.Ler_Int("Digite a quantidade do produto: ")
-            });
+                quantidade = verificação.Ler_Int("Digite a quantidade do produto: ")            });
         }
     }
     public void Listar()
     {
         for(int i = 0; i < produtos.Count; i++)
         {
+            Console.WriteLine($"ID: {produtos[i].id}");
             Console.WriteLine($"Nome: {produtos[i].nome}");
             Console.WriteLine($"Preço: {produtos[i].preco}");
             Console.WriteLine($"Quantidade: {produtos[i].quantidade}");
@@ -28,59 +29,70 @@ class Produto_service{
     public void BuscaPreco()
     {
         string Busca = verificação.Ler_Str("Digite o nome do produto que deseja buscar o preço: ");
+        bool encontrado = false;
         for(int i = 0; i< produtos.Count; i++)
         {
             if(produtos[i].nome == Busca)
             {
                 Console.WriteLine($"o preço do produto {produtos[i].nome} é: {produtos[i].preco}");
+                encontrado = true;
             }
-            else
-            {
-                Console.WriteLine("Produto não encontrado");
-            }
+           
+        }
+        if(!encontrado)
+        {
+            Console.WriteLine("Produto não encontrado");
         }
     }
     public void SimulacaoDes()
     {
         string Busca = verificação.Ler_Str("Digite o nome do produto que deseja buscar o preço: ");
+        bool encontrado = false;
         for(int i = 0; i< produtos.Count; i++)
         {
             if(produtos[i].nome == Busca)
             {
+                encontrado = true;
                 int desconto = verificação.Ler_Int("digite o valor da Porcentagem de desconto: ");
                 decimal PrecoComDesconto = produtos[i].preco - (produtos[i].preco * desconto / 100);
                 Console.WriteLine($"o preço do produto {produtos[i].nome} com desconto de {desconto}% é: {PrecoComDesconto}");
 
             }
-            else
-            {
-                Console.WriteLine("produto não encontrado");
-            }
+           
         }
+        if(!encontrado)
+        {
+            Console.WriteLine("Produto não encontrado");
+    }
     }
     public void Deletar()
     {
         string Busca = verificação.Ler_Str("Digite o nome do produto que deseja deletar: ");
+        bool encontrado = false;
         for(int i = 0; i< produtos.Count; i++)
         {
             if(produtos[i].nome == Busca)
             {
                 produtos.RemoveAt(i);
                 Console.WriteLine("Produto deletado com sucesso");
+                encontrado = true;
             }
-            else
-            {
-                Console.WriteLine("produto não encontrado");
-            }
+           
+        }
+        if(!encontrado)
+        {
+            Console.WriteLine("Produto não encontrado");
         }
     }
     public void Alterar()
     {
         string Busca = verificação.Ler_Str("Digite o nome do produto que deseja alterar: ");
+        bool encontrado = false;
         for(int i = 0; i< produtos.Count; i++)
         {
           if(produtos[i].nome == Busca)
             {
+                encontrado = true;
                 Console.WriteLine("O que deseja alterar?");
                 Console.WriteLine("1 - Nome");
                 Console.WriteLine("2 - Preço");
@@ -89,19 +101,24 @@ class Produto_service{
                 switch (opcao)
                 {
                     case 1:
-                        produtos[i].AlterarNome();
+                        produtos[i].nome= verificação.Ler_Str("Digite o novo nome do produto: ");
                         break;
                     case 2:
-                        produtos[i].AlterarPreco();
+                        produtos[i].preco= verificação.Ler_Dec("Digite o novo preço do produto: ");
                         break;
                     case 3:
-                        produtos[i].AlterarQuantidade();
+                        produtos[i].quantidade= verificação.Ler_Int("Digite a nova quantidade do produto: ");
                         break;
                     default:
                         Console.WriteLine("Opção inválida");
                         break;
                 }
             }
+        }
+    
+        if(!encontrado)
+        {
+            Console.WriteLine("Produto não encontrado");
         }
     }
 }

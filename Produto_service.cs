@@ -8,10 +8,10 @@ class Produto_service{
         return produtos.Count;
     }
 
-    public void Cadastro(int id, string nome, decimal preco, int quantidade){
+    public void Cadastro(string nome, decimal preco, int quantidade){
        
            Produto produto = new Produto();
-                produto.id = id;
+                produto.id = produtos.Count + 1;
                 produto.nome = nome;
                 produto.preco = preco;
                 produto.quantidade = quantidade; 
@@ -46,35 +46,30 @@ class Produto_service{
                 return PrecoComDesconto;
         
     }
-    public void Deletar(Produto produto)
+    public void Deletar(Produto produtoDel)
     {
-         produtos.Remove(produto);
-          
-    }
-    public void Alterar(Produto produto, int? opcao, string? novoNome, decimal? novoPreco, int? novaQuantidade, int?novoId)
-    { 
-                switch (opcao)
-                {
-                    case 1:
-                        produto.nome= novoNome;
-                        break;
-                    case 2:
-                        produto.preco= novoPreco;
-                        break;
-                    case 3:
-                        produto.quantidade= novaQuantidade;
-                        break;
-                    case 4:
-                        produto.id= novoId;
-                        break;
-                    case 5:
-                      
-                        break;
-                    default:
-                        
-                        break;
-                }
-             
+         produtos.Remove(produtoDel);
+         for(int i= 0; i < produtos.Count; i++)
+         {for (int j=1; j< produtos.Count - 1; j++)
+            if(produtos[i].id != produtos[j].id){
+                break;
             }
-
+            else{
+                produtos[i].id += 1;
+            }
+        }
+    }
+    public void AlterarNome( Produto produto, string NovoNome)
+    {           
+        produto.nome= NovoNome;          
+    }
+    public void AlterarPreço(Produto produto, decimal NovoPreço)
+    {
+        produto.preco= NovoPreço;
+    }
+    public void AlterarQuantidade(Produto produto, int NovaQuantidade)
+    {
+        produto.quantidade= NovaQuantidade;
+    }
 }
+   

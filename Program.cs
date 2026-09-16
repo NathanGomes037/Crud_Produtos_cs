@@ -24,11 +24,10 @@ class Program
                     int quantidade_cadastro = verificação.Ler_Int("Digite a quantidade de produtos que deseja cadastrar: ");
                     for(int i = 0; i< quantidade_cadastro; i++)
                     {
-                        int id = verificação.Ler_Int("Digite o ID do produto: ");
                         string nome = verificação.Ler_Str("Digite o nome do produto: ");
                         decimal preco = verificação.Ler_Dec("Digite o preço do produto: ");
                         int quantidade = verificação.Ler_Int("Digite a quantidade do produto: ");
-                        service.Cadastro(id, nome, preco, quantidade);
+                        service.Cadastro(nome, preco, quantidade);
                     }
                     break;
                     
@@ -42,11 +41,12 @@ class Program
                         {
                             encontrado = true;
 
-
+                            Console.WriteLine($"-------------------------------------------------------------------");                            
                             Console.WriteLine($"ID: {produto.id}");
                             Console.WriteLine($"Nome: {produto.nome}");
                             Console.WriteLine($"Preço: {produto.preco}");
                             Console.WriteLine($"Quantidade: {produto.quantidade}");
+                            Console.WriteLine($"-------------------------------------------------------------------");   
                         }
                     }
                     if(!encontrado)
@@ -96,29 +96,51 @@ class Program
                 case 6:
                     string Busca_alterar = verificação.Ler_Str("Digite o nome do produto que deseja alterar: ");
                     Produto? produtoAlterar = service.BuscaProduto(Busca_alterar);
+                    int opcao_alterar = 0;
                     if (produtoAlterar != null)
                     {
-                    Console.WriteLine("O que deseja alterar?");
-                    Console.WriteLine("1 - Nome");
-                    Console.WriteLine("2 - Preço");
-                    Console.WriteLine("3 - Quantidade");
-                    Console.WriteLine("4 - ID");
-                    Console.WriteLine("5 - Voltar ao menu");
-                    int opcao_alterar = verificação.Ler_Int("Digite sua opção: ");
-                    service.Alterar(produtoAlterar, opcao_alterar);
+                        do{
+                        Console.WriteLine("O que deseja alterar?");
+                        Console.WriteLine("1 - Nome");
+                        Console.WriteLine("2 - Preço");
+                        Console.WriteLine("3 - Quantidade");
+                        Console.WriteLine("4 - Voltar ao menu");
+                        opcao_alterar = verificação.Ler_Int("Digite sua opção: ");
+                        switch (opcao_alterar)
+                            {
+                            case 1:
+                                string NovoNo = verificação.Ler_Str("qual o novo nome do produto?: ");
+                                service.AlterarNome(produtoAlterar, NovoNo);
+                                break;
+                            case 2:
+                                decimal NovoPre = verificação.Ler_Dec("qual o novo preço do produto?: ");
+                                service.AlterarPreço(produtoAlterar, NovoPre);
+                                break;
+                            case 3:
+                                int NovaQuant = verificação.Ler_Int("qual a nova quantidade do produto?: ");
+                                service.AlterarQuantidade(produtoAlterar, NovaQuant);
+                                break;
+                            case 4:
+                                Console.WriteLine("fechando menu de Alteração! e voltando ao menu inicial! ");
+                                break;
+                            default:
+                                Console.WriteLine("opção invalida");
+                                break;
+                            }
+                        }while (opcao_alterar != 4);
                     }
                     else
                     {
                         Console.WriteLine("Produto não encontrado");
                     }
-                    break;
+                break;
                 case 0:
                     Console.WriteLine("fechando o Programa");
                     break;
                 default:
                     Console.WriteLine("Opção inválida");
                     break;
-            }
+                }
         }while(opcao != 0);
     }
 }

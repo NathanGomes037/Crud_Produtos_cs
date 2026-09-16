@@ -50,14 +50,11 @@ class Produto_service{
     {
          produtos.Remove(produtoDel);
          for(int i= 0; i < produtos.Count; i++)
-         {for (int j=1; j< produtos.Count - 1; j++)
-            if(produtos[i].id != produtos[j].id){
-                break;
-            }
-            else{
-                produtos[i].id += 1;
-            }
+        {
+            produtos[i].id = i + 1;
         }
+           
+        
     }
     public void AlterarNome( Produto produto, string NovoNome)
     {           
